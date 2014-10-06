@@ -54,15 +54,16 @@ class StepsController < ApplicationController
   end
 
   private
-    def step_params
-      params.require(:step).permit(:name)
-    end
 
-    def set_list
-      @list = List.find(params[:list_id])
-    end
+  def step_params
+    params.require(:step).permit(:name)
+  end
 
-    def list_params
-      params.require(:list).permit(:name, :list_id)
-    end
+  def set_list
+    @list = List.find(params[:list_id])
+  end
+
+  def list_params
+    params.require(:list).permit(:name, :list_id)
+  end
 end
